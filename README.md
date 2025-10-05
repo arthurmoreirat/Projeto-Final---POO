@@ -60,9 +60,9 @@ As principais classes planejadas são:
 ✔️ Abstração  
 ✔️ Encapsulamento  
 ✔️ Herança  
-✔️ Polimorfismo
-✔️ Interface
-✔️ Collections
+✔️ Polimorfismo  
+✔️ Interface  
+✔️ Collections  
 
 ---
 
