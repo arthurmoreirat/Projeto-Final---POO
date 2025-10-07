@@ -31,8 +31,10 @@ O projeto está organizado em **pacotes** para melhor modularização:
   - `Inimigo`
 - **`interfaces`** → contém a interface `Interface`, que define métodos obrigatórios para personagens.  
 - **`utils`** → contém a classe `Roll`, responsável por realizar rolagens de dados (d6, d8, d10, d20) com ou sem vantagem/desvantagem.  
-- **`core`** → contém a classe `CriadorDePersonagem`, que gerencia a criação do personagem com rolagem de atributos, cálculo de modificadores, distribuição de valores e escolha de classe.  
-- **`Main`** → ponto de entrada do programa, responsável por iniciar a criação do personagem e testar funcionalidades.  
+- **`core`** → contém:
+  - `CriadorDePersonagem`: gerencia a criação do personagem com rolagem de atributos, cálculo de modificadores, distribuição de valores e escolha de classe.
+  - `Combate`: gerencia o sistema de combate em turnos entre o personagem do jogador e os inimigos.
+  - `Main`: ponto de entrada do programa, responsável por iniciar a criação do personagem e testar funcionalidades.  
 
 ## 📊 Diagrama UML
 
