@@ -53,10 +53,11 @@ public class Mago extends Personagem implements Interface {
     }
 
     @Override
-    public void usarHabilidade() {
+    public int usarHabilidade() {
         System.out.printf("%s usa a habilidade Bola de Fogo!\n", nome);
         int dano = Roll.d10() + this.inteligencia;
         System.out.printf("A Bola de Fogo causa %d de dano mágico em área!\n", dano);
+        return dano;
     }
 }
 

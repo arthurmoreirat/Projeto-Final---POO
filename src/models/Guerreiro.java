@@ -55,10 +55,11 @@ public class Guerreiro extends Personagem implements Interface {
     }
 
     @Override
-    public void usarHabilidade() {
+    public int usarHabilidade() {
         int cura = Roll.d10() + this.constituicao;
         System.out.printf("%s usa a habilidade retomar fôlego, restaurando %d pontos de vida.\n", nome, cura);
 
         this.PV = curar(cura);
+        return 0;
     }
 }

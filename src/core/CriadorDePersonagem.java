@@ -21,9 +21,13 @@ public class CriadorDePersonagem {
         scanner.nextLine(); // limpar buffer do enter
 
         // Raça
-        System.out.println("Escolha a raça:");
         System.out.print("Digite a raça do personagem: ");
         String raca = scanner.nextLine();
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Agora vamos determinar os atributos que seu personagem terá. Os atributos são representações numéricas da aptidão de seu personagem para diferentes situações. Precisa se esgueirar sorrateiramente? A sua destreza vai ser necessária. Precisa desvender uma língua antiga? Sua inteligência virá a calhar. Para todas as situações que você encontrar, seus atributos serão muito importantes.");
+        System.out.println("Os atributos são mais ou menos relevantes para certas classes (Magos utilizam a INTELIGÊNCIA como base para utilizar magias e Guerreiros usam FORÇA ou DESTREZA para atacar, por exemplo.), mas isso não o impede de construir seu personagem como bem entender.");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------");
 
         // Rolagem de atributos
         System.out.println("\nRolando os atributos (4d6, soma dos 3 maiores)...");

@@ -26,6 +26,14 @@ public final class Roll {
     }
 
     // Dados específicos
+    public static int d4() { 
+        return roll(4); 
+    }
+
+    public static int d4(int vantagem) { 
+        return roll(4, vantagem); 
+    }
+
     public static int d6() { 
         return roll(6); 
     }

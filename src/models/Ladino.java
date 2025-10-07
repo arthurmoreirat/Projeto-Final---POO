@@ -61,11 +61,12 @@ public class Ladino extends Personagem implements Interface {
     }
 
     @Override
-    public void usarHabilidade() {
+    public int usarHabilidade() {
         System.out.printf("%s usa a habilidade Ataque Duplo!\n", nome);
         int dano1 = Roll.d6() + this.destreza / 2;
         int dano2 = Roll.d6() + this.destreza / 2;
         int total = dano1 + dano2;
         System.out.printf("Dois golpes rápidos acertam o inimigo! Dano total: %d (%d + %d)\n", total, dano1, dano2);
+        return total;
     }
 }
