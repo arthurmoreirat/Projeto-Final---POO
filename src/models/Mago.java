@@ -3,36 +3,36 @@ package models;
 import interfaces.Interface;
 import utils.Roll;
 
-public class Guerreiro extends Personagem implements Interface {
+public class Mago extends Personagem implements Interface {
     private int vidaMaxima;
 
-    public Guerreiro(String nome, int idade, int raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
+    public Mago(String nome, int idade, int raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
         super(nome, idade, raca, forca, destreza, inteligencia, constituicao, carisma, sabedoria);
-        this.PV = 10 + this.constituicao;
-        this.CA = 15 + this.destreza;
+        this.PV = 6 + this.constituicao;
+        this.CA = 12 + this.destreza;
         this.vidaMaxima = this.PV;
     }
 
     @Override
     public int atacar(int defesa) {
         int dado = Roll.d20();
-        int ataque = dado + this.força + 2;
+        int ataque = dado + this.inteligencia + 2;
 
-        System.out.printf("%s ataca com rolagem %d (Total: %d)\n", nome, dado, ataque);
+        System.out.printf("%s lança uma magia! Rolagem: %d (Total: %d)\n", nome, dado, ataque);
 
         if(dado == 20) {
             System.out.println("Acerto crítico!");
-            int danoCritico = (Roll.d8() + this.força) * 2;
+            int danoCritico = (Roll.d10() + this.inteligencia) * 2;
             System.out.printf("Dano crítico causado: %d\n", danoCritico);
             return danoCritico;
 
-        } else if (ataque >= defesa){
-            int dano = Roll.d8() + this.força;
-            System.out.printf("Acerto! Dano causado: %d\n", dano);
+        } else if (ataque >= defesa){ 
+            int dano = Roll.d10() + this.inteligencia;
+            System.out.printf("A magia acerta! Dano causado: %d\n", dano);
             return dano;
 
         } else {
-            System.out.println("O ataque errou!");
+            System.out.println("A magia falhou!");
             return 0;
         }
     }
@@ -40,11 +40,9 @@ public class Guerreiro extends Personagem implements Interface {
     @Override
     public int curar(int cura) {
         this.PV += cura;
-
         if (this.PV > vidaMaxima) {
             this.PV = vidaMaxima;
         }
-        
         System.out.printf("%s curou %d pontos de vida. PV atual: %d\n", nome, cura, PV);
         return this.PV;
     }
@@ -56,9 +54,9 @@ public class Guerreiro extends Personagem implements Interface {
 
     @Override
     public void usarHabilidade() {
-        int cura = Roll.d10() + this.constituicao;
-        System.out.printf("%s usa a habilidade retomar fôlego, restaurando %d pontos de vida.\n", nome, cura);
-
-        this.PV = curar(cura);
+        System.out.printf("%s usa a habilidade Bola de Fogo!\n", nome);
+        int dano = Roll.d10() + this.inteligencia;
+        System.out.printf("A Bola de Fogo causa %d de dano mágico em área!\n", dano);
     }
 }
+
