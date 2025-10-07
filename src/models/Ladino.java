@@ -6,7 +6,7 @@ import utils.Roll;
 public class Ladino extends Personagem implements Interface {
     private int vidaMaxima;
 
-    public Ladino(String nome, int idade, int raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
+    public Ladino(String nome, int idade, String raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
         super(nome, idade, raca, forca, destreza, inteligencia, constituicao, carisma, sabedoria);
         this.PV = 8 + this.constituicao;
         this.CA = 14 + this.destreza;

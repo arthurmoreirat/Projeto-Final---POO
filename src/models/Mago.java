@@ -6,7 +6,7 @@ import utils.Roll;
 public class Mago extends Personagem implements Interface {
     private int vidaMaxima;
 
-    public Mago(String nome, int idade, int raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
+    public Mago(String nome, int idade, String raca, int forca, int constituicao, int destreza, int inteligencia, int carisma, int sabedoria) {
         super(nome, idade, raca, forca, destreza, inteligencia, constituicao, carisma, sabedoria);
         this.PV = 6 + this.constituicao;
         this.CA = 12 + this.destreza;

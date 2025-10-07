@@ -5,7 +5,7 @@ public abstract class Personagem {
     //Base 
     protected String nome;
     protected int idade;
-    protected int raca;
+    protected String raca;
     protected int PV;
     protected int CA;
     
@@ -17,7 +17,7 @@ public abstract class Personagem {
     protected int sabedoria;
     protected int carisma;
 
-    public Personagem(String nome, int idade, int raca, int força, int destreza, int inteligencia, int constituicao, int carisma, int sabedoria) {
+    public Personagem(String nome, int idade, String raca, int força, int destreza, int inteligencia, int constituicao, int carisma, int sabedoria) {
         this.nome = nome;
         this.idade = idade;
         this.raca = raca;
@@ -46,11 +46,11 @@ public abstract class Personagem {
         this.idade = idade;
     }
 
-    public int getRaca() {
+    public String getRaca() {
         return raca;
     }
 
-    public void setRaca(int raca) {
+    public void setRaca(String raca) {
         this.raca = raca;
     }
 
