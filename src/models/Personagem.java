@@ -1,3 +1,5 @@
+package models;
+
 public abstract class Personagem {
 
     //Base 
@@ -9,18 +11,24 @@ public abstract class Personagem {
     
     //Atributos 
     protected int força;
+    protected int constituicao;
     protected int destreza;
     protected int inteligencia;
-    protected int constituicao;
-    protected int carisma;
     protected int sabedoria;
+    protected int carisma;
 
-    public Personagem(String nome, int idade, int raca, int força) {
+    public Personagem(String nome, int idade, int raca, int força, int destreza, int inteligencia, int constituicao, int carisma, int sabedoria) {
         this.nome = nome;
         this.idade = idade;
         this.raca = raca;
         this.força = força;
+        this.constituicao = constituicao;
+        this.destreza = destreza;
+        this.inteligencia = inteligencia;
+        this.sabedoria = sabedoria;
+        this.carisma = carisma;
     }
+    
     // Gets e Sets 
     public String getNome() {
         return nome;
@@ -108,6 +116,17 @@ public abstract class Personagem {
 
     public void setCA(int CA) {
         this.CA = CA;
+    }
+
+    public void receberDano(int dano) {
+        this.PV -= dano;
+        
+        if (this.PV < 0) {
+            this.PV = 0;
+            System.out.printf("%s foi derrotado!\n", nome);
+        } 
+
+        System.out.printf("%s recebeu %d de dano. PV restante: %d\n", nome, dano, PV);
     }
 
 }
