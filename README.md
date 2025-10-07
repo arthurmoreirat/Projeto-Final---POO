@@ -38,13 +38,19 @@ O projeto está organizado em **pacotes** para melhor modularização:
 ## 🚀 Como Executar
 
 1. Clone este repositório:  
+   ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
 
 2. Compile os arquivos Java (ajuste o path se necessário):  
+   ```bash
    javac src/**/*.java
+   ```
 
 3. Execute o jogo:  
+   ```bash
    java -cp src core.Main
+   ```
 
 ---
 
